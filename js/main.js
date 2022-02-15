@@ -132,10 +132,40 @@ $(function() {
                                 $this.text(Math.floor(this.countNum));
                             },
                             complete: function() {
+                                // if (this.countNum > 1000) {
+                                    // $this.text('TOO MANY')}; else {
                                 $this.text(this.countNum);
+                                if (this.countNum == 10000) {$this.text('too many')};
+                                // }
                             }
                         });
                     });
+
+//  Adding 'too many' at the end of lines of code
+
+                // if (a == 0 && $(window).scrollTop() > oTop && $this.attr('data-count')>1000000) {
+                //     $('section.stats .single-stat .counter').each(function() {
+                //         var $this = $(this),
+                //             countTo = $this.attr('data-count');
+                //         $({
+                //             countNum: $this.text()
+                //         }).animate({
+                //             countNum: countTo
+                //         }, {
+                //             duration: 2000,
+                //             easing: 'swing',
+                //             step: function() {
+                //                 $this.text(Math.floor(this.countNum));
+                //             },
+                //             complete: function() {
+                //                 $this.text('TOO MANY');
+                //             }
+                //         });
+                //     });
+
+
+
+
                     a = 1;
                 }
             });
