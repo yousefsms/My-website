@@ -140,8 +140,6 @@
 
 
 
-
-
                          <!--Heading-->
                         <div class="blog-heading">
                             <h2>Full-scale assembly and testing</h2>
@@ -155,9 +153,37 @@
                             <img src="media/images/blog/Project Y/Full_scale_test.gif" alt="">
                         </div>
                         <blockquote>A gif of the full-scale test bench view.</blockquote>
-                        <p>There's the story of Project Y and where it stands so far. Please come by and visit again to check out my progress! <a href="media/CAD/Project Y/Sprocket and Chain V3.html">Click here to view an interactive full-scale 3D model of the hardware discussed here that I developed using SolidWorks CAD software!</a></p>
 
-                        <!-- </div> -->
+
+                         <div class="blog-heading">
+                            <h2>Trouble in Paradise</h2>
+                            <div class="blog-meta"></div>
+                        <div class="blog-content">
+
+                            <p> Soon after that, I installed it in the anechoic chamber and put everything together. It was working! I spent the next few days playing around with the data acquisition & control code, spinning the nozzle from my computer, and doing a couple of dry tests. Finally, I was ready to try and run a full scale test. This is where I realized my first mistake.</p>
+                        <div class="blog-image">
+                            <img src="media/images/blog/Project Y/Project Y in Anechoic Chamber.jpg" alt="">
+                        </div>
+                        <blockquote>An image of the Project Y assembly in the anechoic chamber.</blockquote>
+
+                            <p> My design had been working wonderfully during all of my dry runs, but the nozzle just would not rotate when I sent a command during testing! After some troubleshooting, I eventually figured out that even with my gear reduction, my motor could not generate enough torque to rotate the nozzle under load. "Well...now what?" I thought to myself. After a few minutes of panicking, I realized two things. The first, was that I could still build a three dimensional acoustic profile around my nozzle. The only caveat was that we would need to cycle through shutting down and starting up flow in the facility every time I wanted to rotate the nozzle; but hey, I could capture data and try to make my pretty acoustic surface plots. </p>
+                        <div class="blog-image">
+                            <img src="media/images/blog/Project Y/Acoustic-surface-plot-7s.gif" alt="">
+                        <blockquote>Animation illustrating the development of a far-field accoustic surface.</blockquote>
+                        </div>
+
+                        <p>Next, I figured that all I needed was a quick redesign! But first I would need to calculate how much torque I actually needed to rotate the nozzle once there was air flowing. Some internet browsing led me to the conclusion that trying to rotate a screw under load is not common practice in the world of engineering. I'd have to use some other model to estimate how much torque it takes to rotate my nozzle. I found three different resources on techniques I could use. The situation that most realistically matched my situation, was calculating the torque required to overcome static friction on a disc under load. From here, I could come up with a torque to design for. The solution seemed to be another torque multiplier. This time I was going to use a worm and its accopanying worm gear to increase torque.</p>
+
+                            <div class="blog-image">
+                                <img src="media/images/blog/Project Y/Project Y - Assembly.png" alt="">
+                            <blockquote> Screenshot of latest CAD assembly of Project Y.</blockquote>
+                            </div>
+                        </div>
+
+
+
+
+                        <p>There's the story of Project Y and where it stands so far. Please come by and visit again to check out my progress! <a href="media/CAD/Project Y/Sprocket and Chain V3.html">Click here to view an interactive full-scale 3D model of the hardware discussed here that I developed using SolidWorks CAD software!</a></p>
                         
         </section>
 
