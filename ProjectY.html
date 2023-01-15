@@ -98,7 +98,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div> -->
                         <!--Blog Heading-->
                          <!--Heading-->
-                         <a href="media/CAD/Project Y/Sprocket and Chain V3.html">TL;DR? recreate & visualize acoustic field. Click here to go straight to the CAD!</a>
+                         <a href="media/CAD/Project Y/Sprocket and Chain V4_EncoderDrawing.html">TL;DR? recreate & visualize acoustic field. Click here to go straight to the CAD!</a>
                         <div class="blog-heading">
                             <h2>What is Project Y?</h2>
                             <div class="blog-meta"></div>
@@ -187,6 +187,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                         <p>Next, I figured that all I needed was a quick redesign! But first I would need to calculate how much torque I actually needed to rotate the nozzle once there was air flowing. Some internet browsing led me to the conclusion that trying to rotate a screw under load is not common practice in the world of engineering. I'd have to use some other model to estimate how much torque it takes to rotate my nozzle. I found three different resources on techniques I could use. The situation that most realistically matched my situation, was calculating the torque required to overcome static friction on a disc under load. From here, I could come up with a torque to design for. The solution seemed to be another torque multiplier. This time I was going to use a worm and its accompanying worm gear to increase torque.</p>
 
+                        <div class="blog-image">
+                            <img src="media/images/blog/Project Y/WormGearCAD.png" alt="">
+                        <blockquote> An altered design to allow for much increased torque to rotate the nozzle during operation.</blockquote>
+                        </div>
+
+                        <p>With the worm and accompanying worm gear I picked, thee was a speed ratio of 30. On paper, this meant I had far more control/resolution over the rotation of my nozzle. To clarify this, let's start from the stepper motor and work our way out to the nozzle/large sprocket. The stepper motor takes 400 steps to rotate 360° as in, each step rotated the small sprocket attached to the motor by 0.9°. The small sprocket(made with 10 teeth) was attached via a chain to a larger sprocket(made with 40 teeth). The ratio of teeth also represents the gear ratio; hence, I was working with a gear ratio of 4. Now, it takes 1600(400x4) steps to rotate the  small sprocket 360° (0.225°/step). Now, this is where things get a little absurd with the worm/worm gear configuration. Given a speed reduction of 30, it would take 48,000(400*4*30) steps to rotate the nozzle by 360°(0.0075°/step). Once again, this is on paper. Realistically, the chain isn't always in tension, there's a little bit of backlash, and the system isn't perfectly rigid! However, this will be more than enough to run my experiments and collect some really cool data!</p>
+
+                        <p>As nifty as it was to build this system; if I was really going to rotate this pipe and collect data while a supersonic jet was blasting out the end, I needed a way to make sure my nozzle was rotating as much as I was telling it to. The solution to that problem was to install a rotary encoder. The good news was that this is a relatively inexpensive device that was very accurate. The not so good news was that I had to figure out how the heck to mount this encoder onto an already designed assembly, integrate a new device into my system, and program it all to work together. After some soul searching, the fastest thing I could do was 3D print something I could slot into my build! Take a look below.</p>
+                        
+                        <div class="blog-image">
+                            <img src="media/images/blog/Project Y/Encoder_WormGearCAD.png" alt="">
+                        <blockquote> An altered design to allow for much increased torque to rotate the nozzle during operation.</blockquote>
+                        </div>
+
+                        <p>Next step is to put it all together, calibrate my devices & sensors, and make sure all my data acquisition was working too! I'll try to attach a couple more images & figures to the web site as things progress!</p>
                         <!--upload more current screenshot later
                             <div class="blog-image">
                                 <img src="media/images/blog/Project Y/Project Y - Assembly.png" alt="">
@@ -198,7 +213,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-                        <p>There's the story of Project Y and where it stands so far. Please come by and visit again to check out my progress! <a href="media/CAD/Project Y/Sprocket and Chain V3.html">Click here to view an interactive full-scale 3D model of the hardware discussed here that I developed using SolidWorks CAD software!</a></p>
+                        <p>There's the story of Project Y and where it stands so far. Please come by and visit again to check out my progress! <a href="media/CAD/Project Y/Sprocket and Chain V4_EncoderDrawing.html">Click here to view an interactive full-scale 3D model of the hardware discussed here that I developed using SolidWorks CAD software!</a></p>
                         
         </section>
 
