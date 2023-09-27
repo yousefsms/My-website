@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="keywords" content="Personal, Portfolio, Creative">
+        <meta name="description" content="Kalvin Portfolio Template">
+        <meta name="author" content="cosmos-themes">
+
+        <title>Non-axisymmetric nozzle geometry</title>
+
+        <!-- favicon -->
+        <link href="/media/images/favico3.ico" rel="icon" type="image/svg">
+
+        <!--Font Awesome css-->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+
+        <!--Bootstrap css-->
+        <link rel="stylesheet" href="css/bootstrap.css">
+
+        <!--Owl Carousel css-->
+        <link rel="stylesheet" href="css/owl.carousel.min.css">
+        <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+        <!--Magnific Popup css-->
+        <link rel="stylesheet" href="css/magnific-popup.css">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800,900%7cOpen+Sans:400,600,700,800" rel="stylesheet">
+
+        <!--Site Main Style css-->
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T4TRWJG');</script>
+<!-- End Google Tag Manager -->
+
+    <body>
+
+        <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T4TRWJG"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+        <!--Preloader Start-->
+        <!-- <div class="preloader"> -->
+            <!-- <div class="loader "></div> -->
+        <!-- </div> -->
+        <!--Preloader End-->
+
+        <!--Navbar Start-->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <!-- LOGO -->
+                <a class="navbar-brand logo" href="index.html">
+                    Yousef Saleh
+                </a>
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">Back</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!--Navbar End-->
+
+        <section class="banner-blog">
+            <div id="particles-js"></div>
+            <!--Banner Caption-->
+            <div class="banner-caption text-center">
+                <h1>Non-axisymmetric nozzle design</h1>
+                <div class="bread-crumb mt-10">
+                    <a href="index.html">Home</a>
+                    <a href="media/Saleh, Yousef - résumé.pdf"> Résumé</a>
+                    <a href="#">Rectangular nozzle CAD</a>
+                    <a href="#">Elliptical nozzle CAD</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="blog-detail pt-100 pb-100">
+            <div class="container">
+                <div class="row">
+                    <!--Blog Content-->
+                    <div class="col-lg-8 offset-lg-2">
+
+                        <!--Blog Heading-->
+                         <!--Heading-->
+                         U N D E R  C O N S T R U C T I O N
+
+                        <div class="blog-heading">
+                            <h2>What is a non-axisymmetric nozzle?</h2>
+                            <div class="blog-meta"></div>
+                        <div class="blog-content">
+                            <p> To make it as straightforward as possible, let's consider a non-axisymmetric nozzle to be one that is NOT circular at the exit. Why does that matter? Well, the geometry of a nozzle actually dictates a lot of what that nozzle is capable of doing! In the world of supersonic jets, the circular nozzle reigns supereme for a couple of reasons, but I'll just mention two of them: 1. Circular nozzles give you lower frictional thrust losses since they tend to have higher area-to-perimeter ratios. 2. They're easy(ish) to manufacture! Almost a century ago, deriving curvature of the diverging portion of a Converging-Diverging (essential for flow to go supersonic) nozzle was defined using the Method of Characteristics (i.e. MoC nozzles) to eliminate the production of waves within the nozzle. This would lead to a waveless supersonic flow at the nozzle exit at ideal conditions (static pressure of the jet matches ambient). This process was automated so you could easily scale the size of your nozzle.</p>
+
+                            <p>This method would generate a 2D line. However if you wanted a circular nozzle, all you had to do was rotate that line about some predefined centerline! For rectangular nozzles, this was a little more tricky. Most designers opt to have straight sides on the shorter sides and a curvature that follows the Method of Characteristics on the longer sides. Outside of these canonical geometries, the rules tend to get a little more...wild. For instance, there is no well-defined rules or structure to defining an elliptic or diamond nozzle. As a result, the design of these nozzle geometries is left up to the designer.</p>
+
+                            <p>The majority of my doctoral degree journey has been sppent studying the diamond nozzle. The diverging portion of this nozzle was designed such that it had some constant rate of expansion. No method of characteristics here! In the final portion of my studies, I also made a rectangular nozzle and an elliptic one. This was a huge learning process for me from mock-ups, to tolerances, through machinability, design, and manufacture! I'll try to talk about the design of each one here.</p>
+                        </div>
+
+
+                        <div class="blog-heading">
+                            <h2>Rectangular nozzle</h2>
+                            <div class="blog-meta">
+                                <!-- <span class="date">1 April 2018</span> -->
+                                <!-- <span class="by">by John Doe.</span> -->
+                            </div>
+                        </div>
+                        <!--Blog Content-->
+                        <div class="blog-content">
+                            <p> The goal here was to design a Rectangular nozzle. It would have the same overall length as the diamond nozzle and also be designed for Mach 2 flow at the exit. The extra wonky part of this design was that the nozzle had to be split in two! This was done for the sake of machinability. It's really freaking hard to insert tools deep inside a block of solid metal and carve out an interior geometry with a smooth finish and curves that fit the orginal MoC design. Splitting the beast in two would allow for the precise machining required to manufacture the piece. The drawback was that I also had to figure out how to mate the two pieces together. The best solution here would be to insert a bunch of bolts as well as a sealant/gasket to hold things together. The first step here was to design an inlet that would converge from a circular pipe to rectangular throat. This process involved generating 6th order equation driven curves to ensure that the transitions occurs smoothly over the length of the nozzle that we designated to the converging portion. Below, you can see a visualization of the inlet-to-throat portion of the nozzle</p> 
+
+                            <div class="blog-image">
+                            <img src="media/images/blog/Project Y/Project Y - concept.jpg" alt="">
+                            </div>
+                            <!-- <br> -->
+                            <blockquote>Schematic diagram of circular inlet to rectangular throat.</blockquote>
+                            </div>
+
+                            <p>After establishing a subsonic portion, it's time to move onto the supersonic portion of the nozzle. There is a litany of articles, wikis, and demos on the topic that do a better job of explaining MoC nozzle design better than I ever could. I'll give a quick summary to explain what's going on in my design</p>
+
+                            <p>Overall this leads to a sweet looking rectangular nozzle. Below you can take a look at the final product. and <a href="#">you can click on this link to take a closer look at the design!</a> </p>
+
+
+                         <!--Heading-->
+                        <div class="blog-heading">
+                            <h2>Elliptic nozzle</h2>
+                            <div class="blog-meta"></div>
+                        <div class="blog-content">
+
+                            <p> Another geometry that has seen quite a bit of action, is the elliptical one. Designing the supersonic portion of this nozzle is a little more tricky. Supersonic rectangular nozzles tend to see quite a bit of action in the form of wind tunnels. As a result, there is a knowledge base to build off of. Meanwhile, the elliptical nozzle does not have a strong application for testing/manufacturing. Hence, there is no clear cut design principle to forming the supersonic portion. After a lot of discussion and testing, we decided to use multiple MoC lines between the throat and exit plane. We ended up with 20 lines spaced between the minor and major axis of the ellipse. These lines would act as "guidelines" for the modeling software to use when forming the surface. You can see our visualization of the supersonic portion here!</p>
+                        <div class="blog-image">
+                            <img src="media/images/blog/Project Y/Sample_Chain_Movement.gif" alt="">
+                        </div>
+                        <blockquote>A CAD exercise to assemble mechanical components and create a functional animation of the components working together to illustrate the mechanism that will drive the project.</blockquote>
+
+                            <p>The final step in the process would be to finish out modeling the nozzle as I did earlier with the rectangular one. The goal with this nozzle was to use an alternative manufacture technique known as Electrical Discharge Machining (EDM). This would allow for the nozzle to be made up of a single chunk of stainless steel. Or in our case, inconel! The final design of the nozzle can be seen below. Alternatively, <a href ="#">you can click here to take a peak at the model</a></p>
+                        <div class="blog-image">
+                            <img src="media/images/blog/Project Y/Project Y - Assembly.png" alt="">
+                        <blockquote>Top half of complete CAD design. Online/interactive CAD drawing below.</blockquote>
+                            <img src="media/images/blog/Project Y/Project Y - Assembly_2.png" alt="">
+                        </div>
+                        <blockquote>Bottom half of complete CAD design. Online/interactive CAD drawing below.</blockquote>
+                        </div>
+        </section>
+
+        <!--Footer Start-->
+<footer class="pt-50 pb-50" data-scroll-index="5">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-3 col-sm-6">
+                        <!--Contant Item-->
+                        <div class="contact-info">
+                            <h5>Yousef Saleh</h5>
+                            <p><a class="constant_color" href="media/Saleh, Yousef - résumé.pdf">Résumé</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <!--Contant Item-->
+                        <div class="contact-info">
+                            <h5>Phone No.</h5>
+                            <p>(+1) 512 815-4237</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <!--Contant Item-->
+                        <div class="contact-info">
+                            <h5><a href="mailto:ysaleh@fsu.edu?subject=Hey Yousef!">Email</a></h5>
+                            <p>ysaleh@fsu.edu</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <!--Contant Item-->
+                        <div class="contact-info">
+                            <h5 color: inherit><a class="constant_color" href="https://www.linkedin.com/in/yousefsaleh" target="_blank" rel="noopener noreferrer">LinkedIn</a></h5>
+                            <p><a class ="constant_color" href="https://www.linkedin.com/in/yousefsaleh" rel="noopener noreferrer">in/YousefSaleh</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <hr>
+                        <p class="copy pt-30">
+                        Yousef Saleh &copy; 2022-2023. All Right Reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--Footer End-->
+
+        <!--Jquery js-->
+        <script src="js/jquery.min.js"></script>
+        <!--Bootstrap js-->
+        <script src="js/bootstrap.min.js"></script>
+        <!--Stellar js-->
+        <script src="js/jquery.stellar.js"></script>
+        <!--Animated Headline js-->
+        <script src="js/animated.headline.js"></script>
+        <!--Owl Carousel js-->
+        <script src="js/owl.carousel.min.js"></script>
+        <!--ScrollIt js-->
+        <script src="js/scrollIt.min.js"></script>
+        <!--Isotope js-->
+        <script src="js/isotope.pkgd.min.js"></script>
+        <!--Magnific Popup js-->
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <!--Particles js-->
+        <script src="js/particles.min.js"></script>
+        <!--Site Main js-->
+        <script src="js/main.js"></script>
+        <script>
+            //Particles
+            particlesJS.load('particles-js', 'js/particles.json', function() {
+                console.log('particles loaded');
+            });
+        </script>
+
+    </body>
+</html>
+
+
