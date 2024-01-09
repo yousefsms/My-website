@@ -81,8 +81,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="bread-crumb mt-10">
                     <a href="index.html">Home</a>
                     <a href="media/Saleh, Yousef - résumé.pdf"> Résumé</a>
-                    <a href="#">Rectangular nozzle CAD</a>
-                    <a href="#">Elliptical nozzle CAD</a>
+                    <a href="media/CAD/M2_RectangularNozzle_Assembly.html">Rectangular nozzle CAD</a>
+                    <a href="media/CAD/M2_EllipticNozzle_Prelim.html">Elliptical nozzle CAD</a>
                 </div>
             </div>
         </section>
@@ -91,7 +91,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="container">
                 <div class="row">
                     <!--Blog Content-->
-                    <div class="col-lg-8 offset-lg-2">
+                    <!--<div class="col-lg-8 offset-lg-2">-->
 
                         <!--Blog Heading-->
                          <!--Heading-->
@@ -102,7 +102,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <div class="blog-meta"></div>
                         <div class="blog-content">
                             <p> To make it as straightforward as possible, let's consider a non-axisymmetric nozzle to be one that is NOT circular at the exit. Why does that matter? Well, the geometry of a nozzle actually dictates a lot of what that nozzle is capable of doing! In the world of supersonic jets, the circular nozzle reigns supereme for a couple of reasons, but I'll just mention two of them: 1. Circular nozzles give you lower frictional thrust losses since they tend to have higher area-to-perimeter ratios. 2. They're easy(ish) to manufacture! Almost a century ago, deriving curvature of the diverging portion of a Converging-Diverging (essential for flow to go supersonic) nozzle was defined using the Method of Characteristics (i.e. MoC nozzles) to eliminate the production of waves within the nozzle. This would lead to a waveless supersonic flow at the nozzle exit at ideal conditions (static pressure of the jet matches ambient). This process was automated so you could easily scale the size of your nozzle.</p>
-
+                            <div class="blog-image">
+                            <img src="media/images/blog/Nozzles/M2_elliptic_cross.png" alt="Image showing slice of nozzle designed using Method of Characteristics">
+                            </div>
+                            <!-- <br> -->
+                            <blockquote>Slice of nozzle illustrating converging portion and MoC designed diverging section .</blockquote>
+                            </div>
                             <p>This method would generate a 2D line. However if you wanted a circular nozzle, all you had to do was rotate that line about some predefined centerline! For rectangular nozzles, this was a little more tricky. Most designers opt to have straight sides on the shorter sides and a curvature that follows the Method of Characteristics on the longer sides. Outside of these canonical geometries, the rules tend to get a little more...wild. For instance, there is no well-defined rules or structure to defining an elliptic or diamond nozzle. As a result, the design of these nozzle geometries is left up to the designer.</p>
 
                             <p>The majority of my doctoral degree journey has been sppent studying the diamond nozzle. The diverging portion of this nozzle was designed such that it had some constant rate of expansion. No method of characteristics here! In the final portion of my studies, I also made a rectangular nozzle and an elliptic one. This was a huge learning process for me from mock-ups, to tolerances, through machinability, design, and manufacture! I'll try to talk about the design of each one here.</p>
@@ -118,18 +123,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                         <!--Blog Content-->
                         <div class="blog-content">
-                            <p> The goal here was to design a Rectangular nozzle. It would have the same overall length as the diamond nozzle and also be designed for Mach 2 flow at the exit. The extra wonky part of this design was that the nozzle had to be split in two! This was done for the sake of machinability. It's really freaking hard to insert tools deep inside a block of solid metal and carve out an interior geometry with a smooth finish and curves that fit the orginal MoC design. Splitting the beast in two would allow for the precise machining required to manufacture the piece. The drawback was that I also had to figure out how to mate the two pieces together. The best solution here would be to insert a bunch of bolts as well as a sealant/gasket to hold things together. The first step here was to design an inlet that would converge from a circular pipe to rectangular throat. This process involved generating 6th order equation driven curves to ensure that the transitions occurs smoothly over the length of the nozzle that we designated to the converging portion. Below, you can see a visualization of the inlet-to-throat portion of the nozzle</p> 
+                            <p> The goal here was to design a Rectangular nozzle. It would have the same overall length as the diamond nozzle and also be designed for Mach 2 flow at the exit. The extra wonky part of this design was that the nozzle had to be split in two! This was done for the sake of machinability. It's really freaking hard to insert tools deep inside a block of solid metal and carve out an interior geometry with a smooth finish and curves that fit the orginal MoC design. Splitting the beast in two would allow for the precise machining required to manufacture the piece. The drawback was that I also had to figure out how to mate the two pieces together. The best solution here would be to insert a bunch of bolts as well as a sealant/gasket to hold things together. The first step here was to design an inlet that would converge from a circular pipe to rectangular throat. This process involved generating 6th order equation driven curves to ensure that the transitions occurs smoothly over the length of the nozzle that we designated to the converging portion. Below, you can see a visualization of the inlet-to-throat portion of a rectangular nozzle.</p> 
 
                             <div class="blog-image">
-                            <img src="media/images/blog/Project Y/Project Y - concept.jpg" alt="">
+                            <img src="media/images/blog/Nozzles/M2_Rectangular_cross.png" alt="Illustration depicting cross-sectional view of Rectangular nozzle">
                             </div>
                             <!-- <br> -->
                             <blockquote>Schematic diagram of circular inlet to rectangular throat.</blockquote>
                             </div>
 
-                            <p>After establishing a subsonic portion, it's time to move onto the supersonic portion of the nozzle. There is a litany of articles, wikis, and demos on the topic that do a better job of explaining MoC nozzle design better than I ever could. I'll give a quick summary to explain what's going on in my design</p>
+                            <p>After establishing a subsonic portion, it's time to move onto the supersonic portion of the nozzle. Due to the complexity of the interior geometry, it's exceedingly difficult to manufacture this piece out of a solid block of metal. As a compromise, common for larger-scale nozzles & wind tunnels, the nozzle is manufactured in two pieces. That's why there are bolt holes in the image above and in the final design of my rectangular nozzle below!</p>
 
-                            <p>Overall this leads to a sweet looking rectangular nozzle. Below you can take a look at the final product. and <a href="#">you can click on this link to take a closer look at the design!</a> </p>
+                            <div class="blog-image">
+                            <img src="media/images/blog/Nozzles/M2_Rectangular.png" alt="Illustration depicting complete design of Rectangular nozzle">
+                            </div>
+                            <!-- <br> -->
+                            <blockquote>Complete design of Mach 2 Rectangular nozzle of aspect ratio 2.</blockquote>
+                            </div>
+
+                            <p>Overall this leads to a sweet looking rectangular nozzle. <a href="media/CAD/M2_RectangularNozzle_Assembly.html" style="color:#F57251;">you can click on this link to take a closer look at the design!</a> </p>
 
 
                          <!--Heading-->
@@ -191,7 +203,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="col-md-12">
                         <hr>
                         <p class="copy pt-30">
-                        Yousef Saleh &copy; 2022-2024. All Right Reserved.
+                        Yousef Saleh &copy; 2022-<script type="text/javascript">
+var today = new Date()
+var year = today.getFullYear()
+document.write(year)
+</script>. All Right Reserved.
                         </p>
                     </div>
                 </div>
