@@ -1484,11 +1484,20 @@ a.constant_color {
 /*============ 13. Blogs Page ============*/
 
 section.banner-blog {
-    height: 50vh;
+    height: 75vh;
+    width: 100wh;
     background-color: #222;
-    position: relative;
     overflow: hidden;
+
+
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+
 }
+
+
 
 section.banner-blog #particles-js {
     width: 100%;

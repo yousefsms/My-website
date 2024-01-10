@@ -73,16 +73,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </nav>
         <!--Navbar End-->
 
-        <section class="banner-blog">
+        <section class="banner-blog" style="background-image: url('media/images/background/Nozzles_touching2.png')" data-stellar-background-ratio=".5" data-scroll-index="0">
+
             <div id="particles-js"></div>
             <!--Banner Caption-->
             <div class="banner-caption text-center">
                 <h1>Non-axisymmetric nozzle design</h1>
                 <div class="bread-crumb mt-10">
-                    <a href="index.html">Home</a>
-                    <a href="media/Saleh, Yousef - résumé.pdf"> Résumé</a>
-                    <a href="media/CAD/M2_RectangularNozzle_Assembly.html">Rectangular nozzle CAD</a>
-                    <a href="media/CAD/M2_EllipticNozzle_Prelim.html">Elliptical nozzle CAD</a>
+                    <a href="index.html" style="text-shadow: 2px 2px 8px #000000;">Home</a>
+                    <a href="media/Saleh, Yousef - résumé.pdf" style="text-shadow: 2px 2px 8px #000000;"> Résumé</a>
+                    <a href="media/CAD/M2_RectangularNozzle_Assembly.html" style="text-shadow: 2px 2px 8px #000000;">Rectangular nozzle CAD</a>
+                    <a href="media/CAD/M2_EllipticNozzle_Prelim.html" style="text-shadow: 2px 2px 8px #000000;">Elliptical nozzle CAD</a>
                 </div>
             </div>
         </section>
@@ -91,23 +92,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="container">
                 <div class="row">
                     <!--Blog Content-->
-                    <!--<div class="col-lg-8 offset-lg-2">-->
+                    <div class="col-lg-8 offset-lg-2">
 
                         <!--Blog Heading-->
                          <!--Heading-->
-                         U N D E R  C O N S T R U C T I O N
+                         <!--U N D E R  C O N S T R U C T I O N-->
 
                         <div class="blog-heading">
                             <h2>What is a non-axisymmetric nozzle?</h2>
                             <div class="blog-meta"></div>
                         <div class="blog-content">
                             <p> To make it as straightforward as possible, let's consider a non-axisymmetric nozzle to be one that is NOT circular at the exit. Why does that matter? Well, the geometry of a nozzle actually dictates a lot of what that nozzle is capable of doing! In the world of supersonic jets, the circular nozzle reigns supereme for a couple of reasons, but I'll just mention two of them: 1. Circular nozzles give you lower frictional thrust losses since they tend to have higher area-to-perimeter ratios. 2. They're easy(ish) to manufacture! Almost a century ago, deriving curvature of the diverging portion of a Converging-Diverging (essential for flow to go supersonic) nozzle was defined using the Method of Characteristics (i.e. MoC nozzles) to eliminate the production of waves within the nozzle. This would lead to a waveless supersonic flow at the nozzle exit at ideal conditions (static pressure of the jet matches ambient). This process was automated so you could easily scale the size of your nozzle.</p>
+
                             <div class="blog-image">
-                            <img src="media/images/blog/Nozzles/M2_elliptic_cross.png" alt="Image showing slice of nozzle designed using Method of Characteristics">
+                            <img src="media/images/blog/Nozzles/M2_elliptic_cross.png" alt="Image showing slice of nozzle designed using Method of Characteristics" width="10" height="10">
                             </div>
                             <!-- <br> -->
-                            <blockquote>Slice of nozzle illustrating converging portion and MoC designed diverging section .</blockquote>
-                            </div>
+                            <blockquote style="font-size: medium">Slice of nozzle illustrating converging portion and MoC designed diverging section .</blockquote>
+                            
                             <p>This method would generate a 2D line. However if you wanted a circular nozzle, all you had to do was rotate that line about some predefined centerline! For rectangular nozzles, this was a little more tricky. Most designers opt to have straight sides on the shorter sides and a curvature that follows the Method of Characteristics on the longer sides. Outside of these canonical geometries, the rules tend to get a little more...wild. For instance, there is no well-defined rules or structure to defining an elliptic or diamond nozzle. As a result, the design of these nozzle geometries is left up to the designer.</p>
 
                             <p>The majority of my doctoral degree journey has been sppent studying the diamond nozzle. The diverging portion of this nozzle was designed such that it had some constant rate of expansion. No method of characteristics here! In the final portion of my studies, I also made a rectangular nozzle and an elliptic one. This was a huge learning process for me from mock-ups, to tolerances, through machinability, design, and manufacture! I'll try to talk about the design of each one here.</p>
@@ -129,8 +131,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <img src="media/images/blog/Nozzles/M2_Rectangular_cross.png" alt="Illustration depicting cross-sectional view of Rectangular nozzle">
                             </div>
                             <!-- <br> -->
-                            <blockquote>Schematic diagram of circular inlet to rectangular throat.</blockquote>
-                            </div>
+                            <blockquote style="font-size: medium">Schematic diagram of circular inlet to rectangular throat.</blockquote>
+                            
 
                             <p>After establishing a subsonic portion, it's time to move onto the supersonic portion of the nozzle. Due to the complexity of the interior geometry, it's exceedingly difficult to manufacture this piece out of a solid block of metal. As a compromise, common for larger-scale nozzles & wind tunnels, the nozzle is manufactured in two pieces. That's why there are bolt holes in the image above and in the final design of my rectangular nozzle below!</p>
 
@@ -138,8 +140,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <img src="media/images/blog/Nozzles/M2_Rectangular.png" alt="Illustration depicting complete design of Rectangular nozzle">
                             </div>
                             <!-- <br> -->
-                            <blockquote>Complete design of Mach 2 Rectangular nozzle of aspect ratio 2.</blockquote>
-                            </div>
+                            <blockquote style="font-size: medium">Complete design of Mach 2 Rectangular nozzle of aspect ratio 2.</blockquote>
+                            
 
                             <p>Overall this leads to a sweet looking rectangular nozzle. <a href="media/CAD/M2_RectangularNozzle_Assembly.html" style="color:#F57251;">you can click on this link to take a closer look at the design!</a> </p>
 
@@ -152,18 +154,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                             <p> Another geometry that has seen quite a bit of action, is the elliptical one. Designing the supersonic portion of this nozzle is a little more tricky. Supersonic rectangular nozzles tend to see quite a bit of action in the form of wind tunnels. As a result, there is a knowledge base to build off of. Meanwhile, the elliptical nozzle does not have a strong application for testing/manufacturing. Hence, there is no clear cut design principle to forming the supersonic portion. After a lot of discussion and testing, we decided to use multiple MoC lines between the throat and exit plane. We ended up with 20 lines spaced between the minor and major axis of the ellipse. These lines would act as "guidelines" for the modeling software to use when forming the surface. You can see our visualization of the supersonic portion here!</p>
                         <div class="blog-image">
-                            <img src="media/images/blog/Project Y/Sample_Chain_Movement.gif" alt="">
+                            <img src="media/images/blog/" alt="still need to upload this">
                         </div>
-                        <blockquote>A CAD exercise to assemble mechanical components and create a functional animation of the components working together to illustrate the mechanism that will drive the project.</blockquote>
+                        <blockquote style="font-size: medium">A MATLAB visualization to indicate the various MoC lines created to dictate the geometry of the elliptic nozzle.</blockquote>
 
-                            <p>The final step in the process would be to finish out modeling the nozzle as I did earlier with the rectangular one. The goal with this nozzle was to use an alternative manufacture technique known as Electrical Discharge Machining (EDM). This would allow for the nozzle to be made up of a single chunk of stainless steel. Or in our case, inconel! The final design of the nozzle can be seen below. Alternatively, <a href ="#">you can click here to take a peak at the model</a></p>
+                            <p>The final step in the process would be to finish out modeling the nozzle as I did earlier with the rectangular one. The final design of the nozzle can be seen below.</p>
                         <div class="blog-image">
-                            <img src="media/images/blog/Project Y/Project Y - Assembly.png" alt="">
-                        <blockquote>Top half of complete CAD design. Online/interactive CAD drawing below.</blockquote>
-                            <img src="media/images/blog/Project Y/Project Y - Assembly_2.png" alt="">
+                            <img src="media/images/blog/Nozzles/M2_Elliptic.png" alt="">
                         </div>
-                        <blockquote>Bottom half of complete CAD design. Online/interactive CAD drawing below.</blockquote>
+                        <blockquote style="font-size: medium"> Completed nozzle design.</blockquote>
+                        
+                        <p>Alternatively, you can <a href ="media/CAD/M2_EllipticNozzle_Prelim.html" style="color:#F57251;">click here</a> to take a peak at the model. The elliptic nozzle still needs to have bolt holes assigned to it before it is ready to be manufactured and it will be uploaded here when it is complete. For now, an image of the assembled rectangular nozzle attached to a jet facility.</p>
+
+                        <div class="blog-image">
+                            <img src="media/images/blog/Nozzles/1000042895_adobe_express.png" alt="Image of Mach 2 Rectangular nozzle">
                         </div>
+                        <blockquote style="font-size: medium">Assembled rectangular nozzle in jet facility.</blockquote>
+                    </div>
+                        
         </section>
 
         <!--Footer Start-->
