@@ -1731,3 +1731,28 @@ CC
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: rgba(255, 0, 0, 0.0);}/*#3e8e41;} */
+
+
+/* Plotly plots CSS */
+
+.plotly-detail .blog-heading {
+    margin-bottom: 30px;
+}
+
+.plotly-detail .blog-heading h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 25px 0 10px 0;
+}
+
+.plotly-detail .blog-heading .blog-meta span {
+    font-size: 14px;
+}
+
+.plotly-detail .blog-content {
+    margin-bottom: 90px;
+}
+
+.plotly-detail .blog-content p {
+    line-height: 28px;
+}
