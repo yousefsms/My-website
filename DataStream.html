@@ -12,40 +12,67 @@
 
          <style>
 
-        .iframe-container {
-            justify-content: center;
-            align-items: center;
+        .iframe-container,
+        .plotly_centering {
             display: flex;
-            width: 100wh; /* Adjust as needed */
-            /*height: 90vh;*/
-            overflow: hidden;
+            justify-content: center;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 100%;
+            margin: auto;
         }
 
-        iframe {
+        .plotly-shell {
+            width: min(calc(100% - 2rem), 1200px);
+        }
+
+        .plotly-frame {
             border: none;
             width: 100%;
-            height: 100%;
-            overflow: hidden;
+            display: block;
+            background: #fff;
         }
 
-        .plotly_centering {
-        margin: auto;
-        width: 100%;
-        justify-content:center;
-        align-items: center;
-        display:flex;
-        overflow: hidden;
-        /*overflow: hidden; --- CSS can't stop plotly/iframe overflow/scrolling*/
-        /*height: 20%; --- height changes nothing in the website...*/
-        /*border: 3px solid #73AD21;*/
-        /*padding: 10px;*/
-}
+        .plotly-frame--surface {
+            height: 650px;
+        }
+
+        .plotly-frame--sweep {
+            height: 760px;
+        }
+
+        @media (max-width: 600px) {
+            .plotly-shell {
+                width: 100%;
+            }
+        }
+
+        .plotly-fallback {
+            margin: 0.75rem 0 0;
+            text-align: center;
+        }
+
+        .plotly-fallback a {
+            color: #9A2A2A;
+        }
+
+        .data-abbrev h3 {
+            margin-bottom: 0.75rem;
+        }
+
+        figure.blog-image {
+            margin: 0;
+        }
+
+        figure.blog-image figcaption {
+            margin-top: 0.75rem;
+        }
     </style>
 
         <title>Data Stream</title>
 
         <!-- favicon -->
-        <link href="/media/images/favico3.ico" rel="icon" type="image/svg">
+        <link href="media/images/favico3.ico" rel="icon" type="image/x-icon">
 
         <!--Font Awesome css-->
         <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -135,16 +162,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <h1>Data Stream</h1>
                 <div class="bread-crumb mt-10">
                     <a href="index.html" style="text-shadow: 2px 2px 8px #000000;">Home</a>
-                    <a href="media/Saleh, Yousef - résumé.pdf" style="text-shadow: 2px 2px 8px #000000;"> Résumé</a>
+                    <a href="media/Yousef_Saleh_Resume.pdf" style="text-shadow: 2px 2px 8px #000000;"> Résumé</a>
                     <a href="media/CAD/HotJet_Assembly_MAIN_072023.html" style="text-shadow: 2px 2px 8px #000000;">Anechoic chamber CAD</a>
                     <a href="ProjectY.html" style="text-shadow: 2px 2px 8px #000000;">Project Y</a>
                 </div>
             </div>
         </section>
-<!-- blank iframe, since it seems like the first one always gets clipped at the top-->
-<iframe src="" scrolling="no" style=" height:0; overflow:hidden;" frameborder="0"></iframe>
-
-
     <!--Start the rest of the body text -->
         <section class="blog-detail pt-100 pb-100">
             <div class="container">
@@ -152,10 +175,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="col-lg-8 offset-lg-2">
                         <div class="blog-meta"></div>
                             <div class="blog-content">
-                                <p style="color:#770737;"> I hate to say it, but for now, this part of the website won't work on mobile browsers. To the folks look at it this on their small devices, I'm sorry. To those of you on tablets...let me know if that works!</p>
+                                <p style="color:#770737;">These interactive figures are now presented in responsive containers. If an embedded figure is difficult to use on your device, use its direct HTML link to open it in a separate tab.</p>
 
                                 <p>This portion of the website is dedicated to data! I'm going to share data visualizations along with short descriptions. You should be able to interact with most of these figures. I'll be adding more plots, figures, and visualizations as I learn! The bottom of the page includes links to inspect the individual plots. These are an amalgamation of various programming languages so the layout isn't ideal yet. For housekeeping reasons, there will be two sets of plots and you'll be able to pick your poison from the lists below each respective plot.</p>
-                                <p>
+                                <div class="data-abbrev">
                                     <h3>Abbreviation key</h3>
                                     <ul>
                                         <li>M - Mach number</li>
@@ -165,7 +188,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                         <li>Rect - Supersonic rectangular nozzle</li>
                                         <li>Diam - Supersonic diamond nozzle</li>
                                     </ul>
-                                </p>
+                                </div>
                             </div>
                     </div>
                 </div>
@@ -174,11 +197,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <!-- 3D iframe plotly plots -->
-<blockquote style="font-size: x-large; margin: auto;justify-content:center;align-items: center;display:flex;">Three dimensional (surface) plots.</blockquote>
-                <div class="plotly_centering" style=" overflow:hidden;">
-                    <iframe src="media/Plots/Diamond_HotvCold_NPR4p3.html" name="iframe_3D" scrolling="no" frameborder="0" logo="true" style=" width: 50vw; height:60vh; overflow:hidden" >
-                    </iframe>
-                </div> 
+<blockquote id="three-dimensional-plots" style="font-size: x-large; margin: auto;justify-content:center;align-items: center;display:flex;">Three dimensional (surface) plots.</blockquote>
+                <div class="plotly_centering plotly-shell">
+                    <iframe src="media/Plots/Diamond_HotvCold_NPR4p3.html" name="iframe_3D" class="plotly-frame plotly-frame--surface" title="Interactive 3D Plotly figure of heated versus unheated diamond nozzle acoustic surface at NPR 4.3" loading="lazy" scrolling="auto" frameborder="0" logo="true"></iframe>
+                </div>
+                <p class="plotly-fallback">If the embedded plot does not load, <a href="media/Plots/Diamond_HotvCold_NPR4p3.html" target="_blank" rel="noopener noreferrer">open the direct HTML plot</a>.</p>
 
 
 
@@ -215,11 +238,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <!-- 2D iframe plotly plots -->
-<blockquote style="font-size: x-large; margin: auto;justify-content: center;align-items: center;display: flex;">Two dimensional plots</blockquote>
-                <div class="plotly_centering" style=" overflow:hidden; margin: auto;justify-content: center;align-items: center;display: flex;">
-                    <iframe src="media/Plots/AR4 M1p44 Rectangular NPR 4p4 vs AR2 M2 Rectangular&Diamond NPR10.html" name="iframe_2D" scrolling="no" frameborder="0" logo="true" style=" height:93vh; overflow:hidden" >
-                    </iframe>
-                </div> 
+<blockquote id="two-dimensional-plots" style="font-size: x-large; margin: auto;justify-content: center;align-items: center;display: flex;">Two dimensional plots</blockquote>
+                <div class="plotly_centering plotly-shell">
+                    <iframe src="media/Plots/AR4 M1p44 Rectangular NPR 4p4 vs AR2 M2 Rectangular&amp;Diamond NPR10.html" name="iframe_2D" class="plotly-frame plotly-frame--sweep" title="Interactive 2D Plotly figure comparing rectangular and diamond nozzle spectra" loading="lazy" scrolling="auto" frameborder="0" logo="true"></iframe>
+                </div>
+                <p class="plotly-fallback">If the embedded plot does not load, <a href="media/Plots/AR4 M1p44 Rectangular NPR 4p4 vs AR2 M2 Rectangular&amp;Diamond NPR10.html" target="_blank" rel="noopener noreferrer">open the direct HTML plot</a>.</p>
 
 
 
@@ -236,34 +259,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                                 <p>NOTE - click on the legend if these plots look a little too noisy!</p>
                                 <ul>
-                                    <li><a href="media/Plots/AR4 M1p44 Rectangular NPR 4p4 vs AR2 M2 Rectangular&Diamond NPR10.html" target="iframe_2D" style="color:#9A2A2A;">[default] Power spectra of M1.44 AR4 Rectangular nozzle@NPR4.4 vs M2 AR2 Rectangular & Diamond nozzles@NPR10</a>  </li>
+                                    <li><a href="media/Plots/AR4 M1p44 Rectangular NPR 4p4 vs AR2 M2 Rectangular&amp;Diamond NPR10.html" target="iframe_2D" style="color:#9A2A2A;">[default] Power spectra of M1.44 AR4 Rectangular nozzle@NPR4.4 vs M2 AR2 Rectangular &amp; Diamond nozzles@NPR10</a>  </li>
 
                                     <li><a href="media/Plots/Rectangular_M1p44_AR4_NPR4p4_Spectra.html" target="iframe_2D" style="color:#CEB888;">Power spectra of M1.44 AR4 Rectangular nozzle @ NPR4.4</a></li>
 
                                     <li><a href="media/Plots/Spectra_Diam_vs_Rect_NPR4p8_MajorMinor.html" target="iframe_2D" style="color:#CEB888;">Power spectra of M2 AR2 Diamond vs. Rectangular nozzle @ NPR4.8</a></li>
-                                    
+
                                     <li><a href="media/Plots/plotly OASPLvsNPR.html" target="iframe_2D" style="color:#CEB888;">NPR parameter sweep of M1.44 AR4 Rectangular nozzle</a></li>
 
                                     <li><a href="media/images/blog/Project Y/Diamond_NPR4p3_IsometricSurface_Colorbar.pdf" target="iframe_2D" style="color:#CEB888;">PDF file of reconstructed acoustic surface of diamond nozzle at NPR 4.3</a></li>
 
-                                    <li><a href="media/images/blog/Project Y/NPR4p3_AcousticSurface-1.pdf" target=""iframe_2D" style="color:#CEB888;">Acoustic surface of heated jet at 900 K and a pressure ratio of 4.3 atmospheres</a></li>
+                                    <li><a href="media/images/blog/Project Y/NPR4p3_AcousticSurface.pdf" target="iframe_2D" style="color:#CEB888;">Acoustic surface of heated jet at 900 K and a pressure ratio of 4.3 atmospheres</a></li>
                                 </ul>
                             </div>
                     </div>
 
                     <div class="col-lg-8 offset-lg-2">
-                        <div class="blog-image">
-                        <img src="media/images/blog/Project Y/NPR4p3_AcousticSurface-1.png" alt="">
-                        <blockquote> Acoustic surface of heated jet at 900 K and a pressure ratio of 4.3 atmospheres.</blockquote>
+                        <figure class="blog-image">
+                            <img src="media/images/blog/Project Y/NPR4p3_AcousticSurface-1.png" alt="" loading="lazy">
+                            <figcaption>Acoustic surface of heated jet at 900 K and a pressure ratio of 4.3 atmospheres.</figcaption>
+                        </figure>
 
-                        <div class="blog-image">
-                            <img src="media/images/blog/Project Y/DiamondJet.png" alt="">
-                            <blockquote> Volumetric, averaged velocity field of supersonic diamond jet at NPR 4.3. The high speed core and low speed shear layer are highlighted in this figure..</blockquote>
-                        </div>
+                        <figure class="blog-image">
+                            <img src="media/images/blog/Project Y/DiamondJet.png" alt="" loading="lazy">
+                            <figcaption>Volumetric, averaged velocity field of supersonic diamond jet at NPR 4.3. The high speed core and low speed shear layer are highlighted in this figure..</figcaption>
+                        </figure>
                     </div>
                 </div>
             </div>
- </section>
+        </section>
 
 
 
@@ -280,7 +304,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <!--Contant Item-->
                         <div class="contact-info">
                             <h5>Yousef Saleh</h5>
-                            <p><a class="constant_color" href="media/Saleh, Yousef - résumé.pdf">Résumé</a></p>
+                            <p><a class="constant_color" href="media/Yousef_Saleh_Resume.pdf">Résumé</a></p>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
@@ -293,8 +317,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="col-md-3 col-sm-6">
                         <!--Contant Item-->
                         <div class="contact-info">
-                            <h5><a href="mailto:ysaleh@fsu.edu?subject=Hey Yousef!">Email</a></h5>
-                            <p>ysaleh@fsu.edu</p>
+                            <h5><a href="mailto:YousefSalehMS@gmail.com?subject=Hey Yousef!">Email</a></h5>
+                            <p>YousefSalehMS@gmail.com</p>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
@@ -342,6 +366,147 @@ document.write(year)
         <!--Site Main js-->
         <script src="js/main.js"></script>
         <script>
+            (function() {
+                var plotIframeNames = ['iframe_3D', 'iframe_2D'];
+
+                function fitPlotlyFrame(iframe) {
+                    var doc;
+                    try {
+                        doc = iframe.contentDocument || iframe.contentWindow.document;
+                    } catch (error) {
+                        return;
+                    }
+
+                    iframe.style.height = '';
+                    if (!doc) {
+                        return;
+                    }
+
+                    var graphDiv = doc.querySelector('.plotly-graph-div');
+                    var plotly = iframe.contentWindow && iframe.contentWindow.Plotly;
+                    if (!graphDiv || !plotly || typeof plotly.relayout !== 'function') {
+                        return;
+                    }
+
+                    // Preserve each export's native aspect ratio when links load plots of different sizes.
+                    var nativeWidth = parseFloat(graphDiv.dataset.nativeWidth);
+                    var nativeHeight = parseFloat(graphDiv.dataset.nativeHeight);
+                    if (!nativeWidth || !nativeHeight) {
+                        nativeWidth = parseFloat(graphDiv.style.width) || (graphDiv._fullLayout && graphDiv._fullLayout.width);
+                        nativeHeight = parseFloat(graphDiv.style.height) || (graphDiv._fullLayout && graphDiv._fullLayout.height);
+                        if (!nativeWidth || !nativeHeight) {
+                            return;
+                        }
+                        graphDiv.dataset.nativeWidth = nativeWidth;
+                        graphDiv.dataset.nativeHeight = nativeHeight;
+                    }
+
+                    var availableWidth = Math.floor(iframe.getBoundingClientRect().width || iframe.clientWidth || nativeWidth);
+                    var targetWidth = Math.min(nativeWidth, availableWidth);
+                    var targetHeight = Math.max(420, Math.round(nativeHeight * targetWidth / nativeWidth));
+                    var scale = targetWidth / nativeWidth;
+
+                    if (doc.documentElement) {
+                        doc.documentElement.style.width = '100%';
+                    }
+                    if (doc.body) {
+                        doc.body.style.width = '100%';
+                        doc.body.style.margin = '0';
+                        doc.body.style.overflow = 'hidden';
+                        doc.body.style.display = 'block';
+                    }
+
+                    // Some legacy exports reject relayout after an obsolete jQuery callback fails.
+                    // Scaling keeps the complete plot and its modebar visible without editing plot files.
+                    function useScaledFallback() {
+                        graphDiv.style.width = nativeWidth + 'px';
+                        graphDiv.style.height = nativeHeight + 'px';
+                        graphDiv.style.transformOrigin = 'top left';
+                        graphDiv.style.transform = 'scale(' + scale + ')';
+                        iframe.style.height = (targetHeight + 4) + 'px';
+                    }
+
+                    function useRelayoutResult() {
+                        graphDiv.style.transform = '';
+                        graphDiv.style.transformOrigin = '';
+                        graphDiv.style.width = targetWidth + 'px';
+                        graphDiv.style.height = targetHeight + 'px';
+                        if (doc.body) {
+                            doc.body.style.display = 'flex';
+                            doc.body.style.justifyContent = 'center';
+                            doc.body.style.alignItems = 'flex-start';
+                        }
+                        iframe.style.height = (targetHeight + 4) + 'px';
+                    }
+
+                    useScaledFallback();
+                    try {
+                        var resizeResult = plotly.relayout(graphDiv, {
+                            width: targetWidth,
+                            height: targetHeight,
+                            autosize: false
+                        });
+                        if (resizeResult && typeof resizeResult.then === 'function') {
+                            resizeResult.then(useRelayoutResult).catch(useScaledFallback);
+                        } else {
+                            useRelayoutResult();
+                        }
+                    } catch (error) {
+                        useScaledFallback();
+                    }
+                }
+
+                function scheduleFits(iframe) {
+                    if (!iframe) {
+                        return;
+                    }
+                    // Retry because lazy or cached iframes can finish before their load listener attaches.
+                    [0, 250, 800, 2000, 5000].forEach(function(delay) {
+                        setTimeout(function() {
+                            fitPlotlyFrame(iframe);
+                        }, delay);
+                    });
+                }
+
+                function fitAll() {
+                    plotIframeNames.forEach(function(name) {
+                        fitPlotlyFrame(document.querySelector('iframe[name="' + name + '"]'));
+                    });
+                }
+
+                function initPlotlyFrames() {
+                    plotIframeNames.forEach(function(name) {
+                        var iframe = document.querySelector('iframe[name="' + name + '"]');
+                        if (!iframe) {
+                            return;
+                        }
+                        iframe.addEventListener('load', function() {
+                            scheduleFits(iframe);
+                        });
+                        scheduleFits(iframe);
+                    });
+
+                    function scheduleAllFits() {
+                        clearTimeout(window.__plotlyFrameResizeTimer);
+                        window.__plotlyFrameResizeTimer = setTimeout(function() {
+                            window.requestAnimationFrame(fitAll);
+                            setTimeout(fitAll, 350);
+                            setTimeout(fitAll, 1000);
+                        }, 100);
+                    }
+
+                    window.addEventListener('resize', scheduleAllFits);
+                    window.addEventListener('pageshow', scheduleAllFits);
+                    document.addEventListener('scroll', scheduleAllFits, { passive: true });
+                }
+
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', initPlotlyFrames);
+                } else {
+                    initPlotlyFrames();
+                }
+            })();
+
             //Particles
             particlesJS.load('particles-js', 'js/index-particles2.json', function() {
                 console.log('particles loaded');

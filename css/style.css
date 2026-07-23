@@ -36,7 +36,6 @@
     margin: 0;
     text-decoration: none !important;
     list-style: none !important;
-    outline: none !important;
 }
 
 h1,
@@ -57,6 +56,16 @@ a,
 a:hover,
 a:focus {
     color: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid #F57251 !important;
+    outline-offset: 3px;
 }
 
 body {
@@ -686,11 +695,18 @@ nav.fixed-top .nav-item .nav-link:before {
 
 .banner {
     width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
     -webkit-background-size: cover;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
+}
+@supports (height: 100dvh) {
+    .banner {
+        min-height: 100dvh;
+    }
 }
 
 .banner:after {
@@ -1485,7 +1501,7 @@ a.constant_color {
 
 section.banner-blog {
     height: 75vh;
-    width: 100wh;
+    width: 100%;
     background-color: #222;
     overflow: hidden;
 
@@ -1682,21 +1698,23 @@ CC
 }
 
 /*============ 16. Yousef's custom CSS ============*/
- /* Dropdown Button */
+
+/* Dropdown Button */
 .dropbtn {
-  background-color: rgba(255, 0, 0, 0.0);/*#04AA6D;*/
-  color: white;
-  alpha: 0.0;
-  /*padding: 16px;
-  font-size: 16px;
-  padding-right: 13px;
-  padding-left: 13px;*/
+  background-color: rgba(255, 0, 0, 0.0);
+  color: #fff;
   font-size: 13px;
   font-weight: 400;
-  
-  color: #fff;
   text-transform: uppercase;
   border: none;
+  padding: 0;
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.dropbtn:focus-visible {
+  outline: 3px solid #F57251 !important;
+  outline-offset: 4px;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -1707,15 +1725,21 @@ CC
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-  display: none;
+  display: block;
   position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  min-width: 210px;
   background-color: #f1f1f1;
-  min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.0);
-  z-index: 1;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0.5rem);
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
 }
 
-/* Links inside the dropdown */
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
@@ -1723,15 +1747,48 @@ CC
   display: block;
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:hover,
+.dropdown-content a:focus {
+  background-color: #ddd;
+}
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content,
+.dropdown.is-open .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: rgba(255, 0, 0, 0.0);}/*#3e8e41;} */
+.dropdown:hover .dropbtn,
+.dropdown:focus-within .dropbtn,
+.dropdown.is-open .dropbtn {
+  background-color: rgba(255, 0, 0, 0.0);
+}
 
+@media (max-width: 991px) {
+  .dropdown {
+    display: block;
+  }
+
+  .dropdown-content {
+    position: static;
+    top: auto;
+    min-width: 100%;
+    max-height: 0;
+    margin-top: 0;
+    overflow: hidden;
+    transform: none;
+  }
+
+  .dropdown:hover .dropdown-content,
+  .dropdown:focus-within .dropdown-content,
+  .dropdown.is-open .dropdown-content {
+    max-height: 15rem;
+    margin-top: 0.5rem;
+  }
+}
 
 /* Plotly plots CSS */
 

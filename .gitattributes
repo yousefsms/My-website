@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Generated documents are binary assets; do not render them as text diffs.
+*.pdf binary
