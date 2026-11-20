@@ -1,3 +1,8 @@
-
-My-website/
-index.html
+node_modules/
+.pi/
+.sync_hashes/
+__pycache__/
+*.pyc
+*.bak
+.DS_Store
+Thumbs.db

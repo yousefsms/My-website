@@ -1,0 +1,174 @@
+/* Based on dm02-explorer.css for consistency */
+.dm04-container {
+    width: min(calc(100% - 40px), 1280px);
+    margin-inline: auto;
+}
+
+.dm04-explorer {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.dm04-main-card {
+    background: #fff;
+    border-radius: 15px;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.dm04-controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.dm04-control-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.dm04-control-group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 14px;
+}
+
+.dm04-control-group select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.dm04-control-group select:focus {
+    outline: none;
+    border-color: #73AD21;
+}
+
+.dm04-display-container {
+    position: relative;
+    width: 100%;
+    height: clamp(500px, 70svh, 850px);
+    background: #eee;
+    overflow: hidden;
+}
+
+.dm04-iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: none;
+}
+
+.dm04-fallback {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: #777;
+}
+
+.dm04-card-footer {
+    padding: 20px;
+    border-top: 1px solid #eee;
+    background: #fff;
+}
+
+.dm04-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.btn-dm04 {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+}
+
+.btn-dm04-primary {
+    background: #73AD21;
+    color: white;
+}
+
+.btn-dm04-secondary {
+    background: #ddd;
+    color: #333;
+}
+
+.btn-dm04:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.btn-dm04:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.dm04-metadata {
+    padding: 15px;
+    background: #fcfcfc;
+    border-left: 4px solid #73AD21;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.dm04-info-box {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #eef5e9;
+    border-radius: 10px;
+    border: 1px solid #d4e7c8;
+    font-size: 14px;
+}
+
+.dm04-info-box h4 {
+    margin-bottom: 10px;
+    color: #444;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .dm04-container {
+        width: calc(100% - 20px);
+    }
+    .dm04-display-container, .dm04-iframe {
+        height: 68svh;
+        min-height: 420px;
+    }
+}
+
+@media (max-height: 600px) and (orientation: landscape) {
+    .dm04-display-container, .dm04-iframe {
+        height: 80svh;
+        min-height: 260px;
+    }
+}

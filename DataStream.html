@@ -92,6 +92,8 @@
 
         <!--Site Main Style css-->
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/dm02-explorer.css?v=0a665ad6">
+        <link rel="stylesheet" href="css/dm04-spectra.css?v=4e134055">
 
         <!-- Google Tag Manager -->
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -177,7 +179,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <div class="blog-content">
                                 <p style="color:#770737;">These interactive figures are now presented in responsive containers. If an embedded figure is difficult to use on your device, use its direct HTML link to open it in a separate tab.</p>
 
-                                <p>This portion of the website is dedicated to data! I'm going to share data visualizations along with short descriptions. You should be able to interact with most of these figures. I'll be adding more plots, figures, and visualizations as I learn! The bottom of the page includes links to inspect the individual plots. These are an amalgamation of various programming languages so the layout isn't ideal yet. For housekeeping reasons, there will be two sets of plots and you'll be able to pick your poison from the lists below each respective plot.</p>
+                                <p>This portion of the website is dedicated to data visualizations. I share acoustic surfaces and power spectra generated from experimental measurements of supersonic jets.</p>
                                 <div class="data-abbrev">
                                     <h3>Abbreviation key</h3>
                                     <ul>
@@ -195,106 +197,150 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </section>
 
-
-<!-- 3D iframe plotly plots -->
-<blockquote id="three-dimensional-plots" style="font-size: x-large; margin: auto;justify-content:center;align-items: center;display:flex;">Three dimensional (surface) plots.</blockquote>
-                <div class="plotly_centering plotly-shell">
-                    <iframe src="media/Plots/Diamond_HotvCold_NPR4p3.html" name="iframe_3D" class="plotly-frame plotly-frame--surface" title="Interactive 3D Plotly figure of heated versus unheated diamond nozzle acoustic surface at NPR 4.3" loading="lazy" scrolling="auto" frameborder="0" logo="true"></iframe>
-                </div>
-                <p class="plotly-fallback">If the embedded plot does not load, <a href="media/Plots/Diamond_HotvCold_NPR4p3.html" target="_blank" rel="noopener noreferrer">open the direct HTML plot</a>.</p>
-
-
-
-
-
- <section class="blog-detail pt-100 pb-100">
-    <div class="container">
-        <div class="row">
-                    <!--Blog Content-->
-            <div class="col-lg-8 offset-lg-2">
-                <div class="blog-meta"></div>
-                    <div class="blog-content">
-                        <div class="blog-heading">
-                            <h2>3D plots</h2>
-                            </div>
-                            <p>
-                            These acoustic surfaces are the result of data collected using <a href="ProjectY.html"style="color:#F57251;">Project Y.</a>
-                             </p>
-
-                            <p><a href="media/Plots/Diamond_HotvCold_NPR4p3.html" target="iframe_3D" style="color:#9A2A2A;">
-                            [Default] Acoustic surface of Heated (TR2) vs unheated (TR1) supersonic diamond nozzle @ NPR 4.3</a></p>
-                        <!--
-                            <p><a href="https://www.w3schools.com" target="iframe_3D" style="color:#CEB888;">W3Schools.com</a></p>
-                            <p><a href="https://www.w3schools.com" target="iframe_3D" style="color:#CEB888;">W3Schools.com</a></p>
-                        -->
-                    </div>
-            </div>
-        </div>
-    </div>
- </section>
-
-
-
-
-
-<!-- 2D iframe plotly plots -->
-<blockquote id="two-dimensional-plots" style="font-size: x-large; margin: auto;justify-content: center;align-items: center;display: flex;">Two dimensional plots</blockquote>
-                <div class="plotly_centering plotly-shell">
-                    <iframe src="media/Plots/AR4 M1p44 Rectangular NPR 4p4 vs AR2 M2 Rectangular&amp;Diamond NPR10.html" name="iframe_2D" class="plotly-frame plotly-frame--sweep" title="Interactive 2D Plotly figure comparing rectangular and diamond nozzle spectra" loading="lazy" scrolling="auto" frameborder="0" logo="true"></iframe>
-                </div>
-                <p class="plotly-fallback">If the embedded plot does not load, <a href="media/Plots/AR4 M1p44 Rectangular NPR 4p4 vs AR2 M2 Rectangular&amp;Diamond NPR10.html" target="_blank" rel="noopener noreferrer">open the direct HTML plot</a>.</p>
-
-
-
- <section class="blog-detail pt-100 pb-100">
+        <section class="blog-detail pt-100 pb-100">
             <div class="container">
                 <div class="row">
-                    <!--Blog Content-->
                     <div class="col-lg-8 offset-lg-2">
-
-                            <div class="blog-meta"></div>
-                            <div class="blog-content">
-                            <div class="blog-heading">
-                            <h2>2D plots</h2>
-                            </div>
-                                <p>NOTE - click on the legend if these plots look a little too noisy!</p>
+                        <div class="blog-content">
+                            <div class="dm02-info-box">
+                                <h4>Quick Guide to Supersonic Jet Acoustics</h4>
+                                <p><strong>Key Parameters:</strong>
                                 <ul>
-                                    <li><a href="media/Plots/AR4 M1p44 Rectangular NPR 4p4 vs AR2 M2 Rectangular&amp;Diamond NPR10.html" target="iframe_2D" style="color:#9A2A2A;">[default] Power spectra of M1.44 AR4 Rectangular nozzle@NPR4.4 vs M2 AR2 Rectangular &amp; Diamond nozzles@NPR10</a>  </li>
-
-                                    <li><a href="media/Plots/Rectangular_M1p44_AR4_NPR4p4_Spectra.html" target="iframe_2D" style="color:#CEB888;">Power spectra of M1.44 AR4 Rectangular nozzle @ NPR4.4</a></li>
-
-                                    <li><a href="media/Plots/Spectra_Diam_vs_Rect_NPR4p8_MajorMinor.html" target="iframe_2D" style="color:#CEB888;">Power spectra of M2 AR2 Diamond vs. Rectangular nozzle @ NPR4.8</a></li>
-
-                                    <li><a href="media/Plots/plotly OASPLvsNPR.html" target="iframe_2D" style="color:#CEB888;">NPR parameter sweep of M1.44 AR4 Rectangular nozzle</a></li>
-
-                                    <li><a href="media/images/blog/Project Y/Diamond_NPR4p3_IsometricSurface_Colorbar.pdf" target="iframe_2D" style="color:#CEB888;">PDF file of reconstructed acoustic surface of diamond nozzle at NPR 4.3</a></li>
-
-                                    <li><a href="media/images/blog/Project Y/NPR4p3_AcousticSurface.pdf" target="iframe_2D" style="color:#CEB888;">Acoustic surface of heated jet at 900 K and a pressure ratio of 4.3 atmospheres</a></li>
+                                    <li><strong>NPR (Nozzle Pressure Ratio):</strong> The ratio of stagnation pressure inside the nozzle to the ambient pressure outside. Higher NPR generally means higher downstream noise levels and different sound characteristics.</li>
+                                    <li><strong>OASPL (Overall Sound Pressure Level):</strong> A measure of the total acoustic noise levels at a specific location in space.</li>
+                                    <li><strong>Coordinates:</strong> Data is displayed relative to the jet exit, in nozzle equivalent diameters (D_eq)—a reference unit of length, like an inch.</li>
                                 </ul>
+                                </p>
+                                <p><strong>Visualization Modes:</strong> 
+                                <ul>
+                                    <li><strong>Measurement Points:</strong> Displays the discrete microphone positions where data was collected.</li>
+                                    <li><strong>Filled Surface:</strong> Provides a continuous surface by connecting neighboring measurements. Note: This interpolation highlights spatial trends and does not increase the actual angular resolution of the original measurements.</li>
+                                </ul>
+                                </p>
+                                <p><strong>How to interact:</strong> Use your mouse to <strong>rotate</strong> the 3D surface, <strong>scroll</strong> to zoom, and <strong>hover</strong> over the surface to see specific decibel values. <em>Note: Colors are normalized per specific NPR case to highlight spatial trends; comparisons should be made between nozzles only at the same NPR.</em></p>
                             </div>
-                    </div>
 
-                    <div class="col-lg-8 offset-lg-2">
-                        <figure class="blog-image">
-                            <img src="media/images/blog/Project Y/NPR4p3_AcousticSurface-1.png" alt="" loading="lazy">
-                            <figcaption>Acoustic surface of heated jet at 900 K and a pressure ratio of 4.3 atmospheres.</figcaption>
-                        </figure>
+                            <div class="dm02-explorer" id="dm02-container">
+                                <div class="dm02-controls">
+                                    <div class="control-group">
+                                        <label for="dm-view">Visualization Mode</label>
+                                        <select id="dm-view">
+                                            <option value="dm02">Measurement Points</option>
+                                            <option value="dm03">Filled Surface</option>
+                                        </select>
+                                    </div>
+                                    <div class="control-group">
+                                        <label for="dm02-nozzle">Nozzle Geometry</label>
+                                        <select id="dm02-nozzle">
+                                            <option value="diamond">Diamond</option>
+                                            <option value="rectangular">Rectangular</option>
+                                            <option value="elliptic">Elliptic</option>
+                                        </select>
+                                    </div>
+                                    <div class="control-group">
+                                        <label for="dm02-npr">Pressure Ratio (NPR)</label>
+                                        <select id="dm02-npr">
+                                            <!-- Options populated by JS -->
+                                        </select>
+                                    </div>
+                                </div>
 
-                        <figure class="blog-image">
-                            <img src="media/images/blog/Project Y/DiamondJet.png" alt="" loading="lazy">
-                            <figcaption>Volumetric, averaged velocity field of supersonic diamond jet at NPR 4.3. The high speed core and low speed shear layer are highlighted in this figure..</figcaption>
-                        </figure>
+                                <div class="dm02-display">
+                                    <div id="dm02-fallback" class="dm02-fallback">
+                                        <p>Select a mode, nozzle, and NPR to load a figure.</p>
+                                    </div>
+                                    <iframe id="dm02-iframe" class="dm02-iframe" src="" loading="lazy"></iframe>
+                                </div>
+
+                                <div class="dm02-metadata" id="dm02-metadata">
+                                    Select a case to see details.
+                                </div>
+                                
+                                <div class="dm02-actions">
+                                    <a id="dm02-link-full" href="#" target="_blank" class="btn-dm02 btn-dm02-primary">Open Full Size</a>
+                                    <a id="dm02-link-png" href="#" download class="btn-dm02 btn-dm02-secondary">Download PNG</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <section class="dm04-wrapper pt-100 pb-100">
+            <div class="container">
+                <div class="dm04-explorer" id="dm04-container">
+                    <div class="dm04-info-box" id="dm04-physics-info">
+                        <h4>Azimuth-resolved spectra</h4>
+                        <p>Because each azimuthal reconstruction is performed at a fixed NPR (fixed U<sub>j</sub> and D<sub>eq</sub>), we plot three-dimensional spectra in frequency (Hz). In this setting f and St = fD<sub>eq</sub>/U<sub>j</sub> are related by a constant factor, so using f preserves all physics while keeping the 3-D visualizations and tone/harmonic identification straightforward.</p><p class="mt-3"><strong>Isentropic Jet Velocity:</strong><br>The jet exit velocity U<sub>j</sub> is calculated based on the nominal NPR for a cold expanded jet:<br><span style="display:block; text-align:center; margin: 15px 0; font-family: 'Times New Roman', serif; font-size: 1.1em;">U<sub>j</sub> = &radic;[ (2 &gamma; R T<sub>0</sub> / (&gamma; - 1)) &times; (1 - NPR<sup>-(&gamma; - 1) / &gamma;</sup>) ]</span><br>Constants: &gamma; = 1.4, R = 287 J/(kg K), T<sub>0</sub> = 295 K.</p>
+                    </div>
+                    <div class="dm04-controls"> 
+                        <div class="dm04-control-group">
+                            <label for="dm04-nozzle">Nozzle Geometry</label>
+                            <select id="dm04-nozzle"></select>
+                        </div>
+                        <div class="dm04-control-group">
+                            <label for="dm04-npr">Pressure Ratio (NPR)</label>
+                            <select id="dm04-npr"></select>
+                        </div>
+                        <div class="dm04-control-group">
+                            <label for="dm04-phi">Polar Angle (φ)</label>
+                            <select id="dm04-phi"></select>
+                        </div>
+                    </div>
+                    <div class="dm04-main-card">
+                        <div class="dm04-display-container">
+                            <div id="dm04-fallback" class="dm04-fallback">
+                                <p>Select a case to load a spectrum.</p>
+                            </div>
+                            <iframe id="dm04-iframe" class="dm04-iframe" src="" loading="lazy"></iframe>
+                        </div>
+                        <div class="dm04-card-footer">
+                            <div class="dm04-metadata" id="dm04-metadata">
+                                Select a case to see details.
+                            </div>
+                            <div class="dm04-actions">
+                                <a id="dm04-link-full" href="#" target="_blank" class="btn-dm04 btn-dm04-secondary">Open Full Size</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="blog-detail pt-100 pb-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <div class="blog-content">
+                            <div class="blog-heading mt-50" style="border-top: 1px solid #eee; padding-top: 30px;">
+                                <h2>Additional 2D Analyses</h2>
+                                <p>Below are comparative power spectra and parameter sweeps.</p>
+                                <div class="plotly_centering">
+                                    <iframe src="media/Plots/AR4 M1p44 Rectangular NPR 4p4 vs AR2 M2 Rectangular&Diamond NPR10.html" name="iframe_2D" scrolling="no" frameborder="0" style="width: 100%; height:80vh;"></iframe>
+                                </div>
+                                <ul class="mt-30">
+                                    <li><a href="media/Plots/Rectangular_M1p44_AR4_NPR4p4_Spectra.html" target="iframe_2D" style="color:#9A2A2A;">Power spectra of M1.44 AR4 Rectangular nozzle @ NPR4.4</a></li>
+                                    <li><a href="media/Plots/Spectra_Diam_vs_Rect_NPR4p8_MajorMinor.html" target="iframe_2D" style="color:#9A2A2A;">Power spectra of M2 AR2 Diamond vs. Rectangular nozzle @ NPR4.8</a></li>
+                                    <li><a href="media/Plots/plotly OASPLvsNPR.html" target="iframe_2D" style="color:#9A2A2A;">NPR parameter sweep of M1.44 AR4 Rectangular nozzle</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 offset-lg-2">
+                            <figure class="blog-image">
+                                <img src="media/images/blog/Project Y/NPR4p3_AcousticSurface-1.png" alt="" loading="lazy">
+                                <figcaption>Acoustic surface of heated jet at 900 K and a pressure ratio of 4.3 atmospheres.</figcaption>
+                            </figure>
 
-
-
-
-
+                            <figure class="blog-image">
+                                <img src="media/images/blog/Project Y/DiamondJet.png" alt="" loading="lazy">
+                                <figcaption>Volumetric, averaged velocity field of supersonic diamond jet at NPR 4.3. The high speed core and low speed shear layer are highlighted in this figure..</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!--Footer Start-->
 <footer class="pt-50 pb-50" data-scroll-index="5">
@@ -365,6 +411,8 @@ document.write(year)
         <script src="js/particles.min.js"></script>
         <!--Site Main js-->
         <script src="js/main.js"></script>
+        <script src="js/dm02-explorer.js?v=d210133b"></script>
+        <script src="js/dm04-spectra.js?v=7c77415d"></script>
         <script>
             (function() {
                 var plotIframeNames = ['iframe_3D', 'iframe_2D'];
@@ -515,5 +563,3 @@ document.write(year)
 
     </body>
 </html>
-
-
