@@ -118,6 +118,50 @@ async function runTests() {
         console.error('❌ Iframe src updated correctly: ' + iframe.src);
     }
 
+    console.log('Test 6: Guarded Resize Logic');
+    // Mock the Plotly object in the iframe's window
+    let resizeCalled = false;
+    Object.defineProperty(iframe, 'contentWindow', {
+        value: {
+            document: {
+                querySelector: () => ({ parentElement: { style: {} } })
+            },
+            Plotly: {
+                Plots: {
+                    resize: () => { resizeCalled = true; }
+                }
+            }
+        },
+        configurable: true
+    });
+    
+    // Mock clientWidth (JSDOM returns 0 by default)
+    Object.defineProperty(iframe, 'clientWidth', {
+        value: 500,
+        configurable: true
+    });
+
+    // Access the function from the global scope (since it was added to window via script)
+    if (window.resizePlotlyInIframe) {
+        window.resizePlotlyInIframe(iframe);
+        if (resizeCalled) {
+            console.log('✅ resizePlotlyInIframe triggered Plotly.resize for width 500');
+        } else {
+            console.error('❌ resizePlotlyInIframe did NOT trigger Plotly.resize for width 500');
+        }
+
+        resizeCalled = false;
+        Object.defineProperty(iframe, 'clientWidth', { value: 100, configurable: true });
+        window.resizePlotlyInIframe(iframe);
+        if (!resizeCalled) {
+            console.log('✅ resizePlotlyInIframe guard active for width 100');
+        } else {
+            console.error('❌ resizePlotlyInIframe triggered Plotly.resize for width 100 (guard failed)');
+        }
+    } else {
+        console.error('❌ resizePlotlyInIframe function not found on window');
+    }
+
     console.log('Tests completed successfully.');
     process.exit(0);
 }

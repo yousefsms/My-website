@@ -3,6 +3,6 @@
     "jsdom": "^31.0.1"
   },
   "scripts": {
-    "test": "node tests/data-stream/test_dm02_logic.js && node tests/data-stream/test_dm04_logic.js"
+    "test": "node tests/data-stream/test_dm02_logic.js && node tests/data-stream/test_dm04_logic.js && node tests/data-stream/test-dm04-regression.js && node tests/data-stream/test-dm04.js"
   }
 }

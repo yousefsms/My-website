@@ -1,5 +1,5 @@
 /* Based on dm02-explorer.css for consistency */
-.dm04-container {
+#dm04-container {
     width: min(calc(100% - 40px), 1280px);
     margin-inline: auto;
 }
@@ -157,7 +157,7 @@
 }
 
 @media (max-width: 768px) {
-    .dm04-container {
+    #dm04-container {
         width: calc(100% - 20px);
     }
     .dm04-display-container, .dm04-iframe {
@@ -171,4 +171,9 @@
         height: 80svh;
         min-height: 260px;
     }
+}
+/* Center the content inside the iframe by ensuring the container is centered */
+#dm04-iframe {
+    margin: 0 auto;
+    display: block;
 }

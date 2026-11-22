@@ -16,6 +16,7 @@
         phi: ''
     };
     let debounceTimer = null;
+    let resizeTimer = null;
     let currentLoadUrl = '';
 
     function init() {
@@ -36,6 +37,43 @@
             console.error('DM04 Catalog Error:', err);
             updateFallback('Figures being prepared. Please check back soon.');
         }
+    }
+
+    function resizePlotlyInIframe(iframe) {
+        if (!iframe || !iframe.contentWindow) return;
+        
+        const win = iframe.contentWindow;
+        const doc = win.document;
+        const plotDiv = doc.querySelector('.plotly-graph-div');
+        
+        if (!plotDiv) return;
+
+        // Guard against collapsed viewports to prevent resize loops
+        if (iframe.clientWidth < 200) return;
+
+        // Remove hard-coded dimensions from the wrapping div if they exist
+        const parentDiv = plotDiv.parentElement;
+        if (parentDiv && (parentDiv.style.width !== '100%' || parentDiv.style.height !== '100%')) {
+            parentDiv.style.width = '100%';
+            parentDiv.style.height = '100%';
+        }
+
+        // Trigger Plotly resize if the library is available in the iframe
+        if (win.Plotly && win.Plotly.Plots && win.Plotly.Plots.resize) {
+            win.Plotly.Plots.resize(plotDiv);
+        }
+    }
+    // Expose to window for testing
+    window.resizePlotlyInIframe = resizePlotlyInIframe;
+
+    function handleWindowResize() {
+        if (resizeTimer) clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            const iframe = document.getElementById('dm04-iframe');
+            if (iframe && iframe.style.display !== 'none') {
+                resizePlotlyInIframe(iframe);
+            }
+        }, DEBOUNCE_MS);
     }
 
     function populateFilters() {
@@ -135,6 +173,9 @@
                 clearTimeout(timeoutId);
                 fallback.style.display = 'none';
                 
+                // Initial resize to fit the iframe viewport
+                resizePlotlyInIframe(iframe);
+                
                 const uj = entry.uj_m_s ? entry.uj_m_s.toFixed(1) : '---';
                 const deq = entry.deq_mm ? entry.deq_mm : '---';
 
@@ -170,6 +211,8 @@
         if (nozzleSel) nozzleSel.addEventListener('change', handleFilterChange);
         if (nprSel) nprSel.addEventListener('change', handleFilterChange);
         if (phiSel) phiSel.addEventListener('change', handleFilterChange);
+        
+        window.addEventListener('resize', handleWindowResize);
     });
 }
 )();
